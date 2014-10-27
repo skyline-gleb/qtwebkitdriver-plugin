@@ -7,4 +7,4 @@ if [ -z "$SELENIUM_SERVER_STANDALONE" ]; then
 fi
 
 javac -cp .:$SELENIUM_SERVER_STANDALONE qtwebkitdriver/*.java
-jar cf qtwebkitdriverplugin.jar qtwebkitdriver/*.class META-INF/*
+jar cf qtwebkitdriver-plugin.jar qtwebkitdriver/*.class META-INF/*
