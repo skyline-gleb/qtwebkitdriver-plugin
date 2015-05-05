@@ -1,4 +1,4 @@
-package qtwebkitdriver;
+package _nameInLower_driver;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -15,18 +15,18 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class QtWebkitDriverService extends DriverService {
-    public static final String QTWEBKIT_DRIVER_EXE_PROPERTY = "webdriver.qtwebkit.driver";
-    public static final String QTWEBKIT_DRIVER_ARGS_PROPERTY = "webdriver.qtwebkit.args";
+public class _name_DriverService extends DriverService {
+    public static final String _nameInUpper__DRIVER_EXE_PROPERTY = "webdriver._nameInLower_.driver";
+    public static final String _nameInUpper__DRIVER_ARGS_PROPERTY = "webdriver._nameInLower_.args";
 
-    public QtWebkitDriverService(File executable, int port, ImmutableList<String> args,
+    public _name_DriverService(File executable, int port, ImmutableList<String> args,
                                  ImmutableMap<String, String> environment) throws IOException {
         super(executable, port, args, environment);
     }
 
-    public static QtWebkitDriverService createDefaultService() {
-        File exe = findExecutable("qtwebkitdriver", QTWEBKIT_DRIVER_EXE_PROPERTY, "", "");
-        String args = getArguments(QTWEBKIT_DRIVER_ARGS_PROPERTY, "");
+    public static _name_DriverService createDefaultService() {
+        File exe = findExecutable("_nameInLower_driver", _nameInUpper__DRIVER_EXE_PROPERTY, "", "");
+        String args = getArguments(_nameInUpper__DRIVER_ARGS_PROPERTY, "");
         return new Builder().usingDriverExecutable(exe).usingAnyFreePort().usingArgs(args).build();
     }
 
@@ -65,7 +65,7 @@ public class QtWebkitDriverService extends DriverService {
             return this;
         }
 
-        public QtWebkitDriverService build() {
+        public _name_DriverService build() {
             if (port == 0) {
                 port = PortProber.findFreePort();
             }
@@ -75,7 +75,7 @@ public class QtWebkitDriverService extends DriverService {
             try {
                 this.args.add(String.format("--port=%d", port));
 
-                return new QtWebkitDriverService(exe, port, this.args.build(), environment);
+                return new _name_DriverService(exe, port, this.args.build(), environment);
 
             } catch (IOException e) {
                 throw new WebDriverException(e);

@@ -1,4 +1,4 @@
-package qtwebkitdriver;
+package _nameInLower_driver;
 
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -13,17 +13,17 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 
 
-public class QtWebkitDriverProvider implements DriverProvider {
-    private static final Logger log = Logger.getLogger(QtWebkitDriverProvider.class.getName());
+public class _name_DriverProvider implements DriverProvider {
+    private static final Logger log = Logger.getLogger(_name_DriverProvider.class.getName());
 
-    private final String browser = "qtwebkit";
+    private final String browser = "_nameInLower_";
 
     private Capabilities capabilities;
     private Class<? extends WebDriver> implementation;
 
-    public QtWebkitDriverProvider() {
+    public _name_DriverProvider() {
         this.capabilities = new DesiredCapabilities(browser, "", Platform.ANY);
-        String className = "qtwebkitdriver.QtWebkitDriver";
+        String className = "_nameInLower_driver._name_Driver";
         try {
             this.implementation = Class.forName(className).asSubclass(WebDriver.class);
         } catch (ClassNotFoundException e) {
@@ -33,7 +33,7 @@ public class QtWebkitDriverProvider implements DriverProvider {
         }
     }
 
-    public QtWebkitDriverProvider(Capabilities capabilities, Class<? extends WebDriver> implementation) {
+    public _name_DriverProvider(Capabilities capabilities, Class<? extends WebDriver> implementation) {
         this.capabilities = capabilities;
         this.implementation = implementation;
     }
